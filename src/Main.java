@@ -24,6 +24,9 @@ public class Main
 	students[2].avgMark = 83;
     
 StudentGroup sg=new StudentGroup(3);
+	
+sg.addLast(s);
+sg.getStudent(0);
 
 	
 

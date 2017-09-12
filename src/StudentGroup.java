@@ -14,28 +14,28 @@ import java.util.Date;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	int len;
-	
-	/**
+	public int len;
+public int p=0;	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
 	public StudentGroup(int length) {
 		this.students = new Student[length];
- 	len=length;
+		len=length;
+	
 	}
 
 	@Override
-	public Student[] getStudents()
- {   	 
-	for(int i=0;i<len;i++)
-{
-    getStudent(i);
-}
+	public Student[] getStudents() {
+		//StudentArrayOperation s=new StudentArrayOperation();
+		for(int k=0;k<len;k++)
+		{
+
+		getStudent(k);
+		
 
 
-
-
+		}
 
 		// Add your implementation here
 		return null;
@@ -43,53 +43,91 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
+
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		// Add your implementation here
-		return null;
+		System.out.println(students[index].getId());
+		System.out.println(students[index].getFullName());
+System.out.println(students[index].getBirthDate());
+System.out.println(students[index].getAvgMark());
+return null;
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		// Add your implementation here
+		add(student,index);
+// Add your implementation here
 	}
 
 	@Override
-	public void addFirst(Student student) {
-		// Add your implementation here
+	public void addFirst(Student student) 
+{
+if(student==NULL)
+throw IllegalArgumentException;
+else
+{
+for(int k=0;k<p;k++)
+{
+students[k+1]=students[k];
+}
+students[0]=student;		// Add your implementation here
+p++;		// Add your implementation here
 	}
+}
 
 	@Override
-	public void addLast(Student student) {
-		// Add your implementation here
+	public void addLast(Student student) 
+{
+if(index<0 && index>=len)
+throw IllegalArgumentException;
+else
+students[p++]=student;	
+	// Add your implementation here
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		// Add your implementation here
-	}
+		//add(student,index);	
+for(int k=index;k<p;k++)
+{
+students[k+1]=students[k];
+
+
+}
+students[index]=student;	// Add your implementation here
+p++;	}
 
 	@Override
 	public void remove(int index) {
-		// Add your implementation here
+/*			for(int k=index;k<p;k++)
+{
+students[k]=students[k-1];
+
+
+}
+students[index]=student;	// Add your implementation here
+p++;
+*/		// Add your implementation here
 	}
 
 	@Override
 	public void remove(Student student) {
-		// Add your implementation here
+		removeFromElement(student);
+// Add your implementation here
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
+	removeFromIndex(index);
 		// Add your implementation here
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
-		// Add your implementation here
+		removeFromElement(student);
+// Add your implementation here
 	}
 
 	@Override
@@ -104,7 +142,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void bubbleSort() {
-		// Add your implementation here
+	// Add your implementation here
 	}
 
 	@Override
