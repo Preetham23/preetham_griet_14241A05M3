@@ -1,8 +1,9 @@
-public class Main {
+public class Main 
+	{
 
 	public static void main(String[] args)
  {
-	//student st=new student(33,"David Luis","1996-09-23",82);
+	Student st=new Student(33,"David Luis","1996-09-23",82);
 	Student students[] = new Student[3];
 	students[0] = new Student();
         students[0].id = 1;
@@ -22,7 +23,7 @@ public class Main {
 	students[2].birthDate= "1996-09-22";
 	students[2].avgMark = 83;
     
-
+StudentGroup sg=new StudentGroup(3);
 
 	
 
